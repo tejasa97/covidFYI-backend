@@ -1,0 +1,16 @@
+id,category,state,area,subCategory,pointOfContact,email1,email2,phone1,phone2,sourceUrl,source,description
+1,Government Contacts,Assam,Baksa,,Dilip Kr Bothra,,,9435555846,,https://covid19.assam.gov.in/district-wise-list-of-nodal-officers/,Govt. of Assam,District Nodal Officer Number
+2,Government Contacts,Punjab,Amritsar,District Control Room,,,,01832211864,,"http://pbhealth.gov.in/Civil%20Surgeons,%20Nodal%20Officer%20and%20Control%20Room%20Nos.pdf",Govt. of Punjab,Control Room Contact Details
+3,Government Contacts,Punjab,Sas Nagar,District Control Room,,,,01722270091,,"http://pbhealth.gov.in/Civil%20Surgeons,%20Nodal%20Officer%20and%20Control%20Room%20Nos.pdf",Govt. of Punjab,Control Room Contact Details
+4,Government Contacts,Jammu and Kashmir,Budgam,Staff Nurse District Hospital,Sr. Rifat ,,,9622416092,,https://www.dhskashmir.org/images/RRT%20District.pdf,Directorate of Health Services,Rapid Response Team - District
+5,Government Contacts,Jammu and Kashmir,Budgam,Staff Nurse District Hospital,Sr. Yaseema ,,,9622728431,,https://www.dhskashmir.org/images/RRT%20District.pdf,Directorate of Health Services,Rapid Response Team - District
+6,Government Contacts,Assam,Hojal,,Sri Pankaj Deka,,,9435119326,,https://covid19.assam.gov.in/district-wise-list-of-nodal-officers/,Govt. of Assam,District Nodal Officer Number
+7,Government Contacts,Punjab,,State Control Room,,,,8872090029,0172-2920074,http://pbhealth.gov.in/IEC%20Material%20for%20Corona%20Virus.pdf,Govt. of Punjab,State Control Room
+8,Government Contacts,National,,SCIENTIST D NON COMMUNICABLE DISEASES,Stuti S Bhargava,stuti.bhargava@icmr.gov.in,,01126589384,,https://www.icmr.nic.in/content/contact-us,ICMR,Indian Council of Medical Research - Headquarter Scientists
+9,Government Contacts,National,,SCIENTIST C EPIDEMIOLOGY AND COMMUNICABLE DISEASES,Sumit Suresh Aggarwal,aggarwal.sumit@icmr.gov.in,,08329944688,,https://www.icmr.nic.in/content/contact-us,ICMR,Indian Council of Medical Research - Headquarter Scientists
+10,Government Contacts,Jammu and Kashmir,Kulgam,Driver CMO Office Kgm,Tariq Ahmad Tariq ,,,7006605554,,https://www.dhskashmir.org/images/RRT%20District.pdf,Directorate of Health Services,Rapid Response Team - District
+11,Government Contacts,National,,SCIENTIST G NON COMMUNICABLE DISEASES,Tripti Khanna,khannat.hq@icmr.gov.in,,01126588707,,https://www.icmr.nic.in/content/contact-us,ICMR,Indian Council of Medical Research - Headquarter Scientists
+12,Government Contacts,Assam,Goalaghat,,Uday Praveen,,,9490123960,,https://covid19.assam.gov.in/district-wise-list-of-nodal-officers/,Govt. of Assam,District Nodal Officer Number
+13,Government Contacts,Jammu and Kashmir,Budgam,Health Educator Block Sogam,Zahid Hassan Dar ,,,8803954009,,https://www.dhskashmir.org/images/RRT%20District.pdf,Directorate of Health Services,Rapid Response Team - District
+14,Government Contacts,West Bengal,State,Control Room Number,,,,2357-1083,,https://www.wbhealth.gov.in/,Govt. of West Benagl,Control room Number
+15,Government Contacts,Uttar Pradesh,Allahabad,Admin Control Room Number,,,,0532-2641577,0532-2641578,https://prayagraj.nic.in/covid-19/,Govt. of UP,Admin Control Room Number

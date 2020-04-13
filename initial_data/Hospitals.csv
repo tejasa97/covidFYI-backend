@@ -1,0 +1,6 @@
+id,category,state,area,name,pointOfContact,email1,email2,phone1,phone2,address,sourceUrl,source,description
+1,Hospitals,Gujarat,Gandhinagar,Aashka Hospital,Dr. Dipak,medi.admin@aashkahospitals.in,,7575007702,,,https://nhm.gujarat.gov.in/Portal/News/221_1_PVT-HOSPITAL-COVID-19-ISOLATON-BEDS.pdf,Govt Of Gujarat,Private Hospitals with isolation beds
+2,Hospitals,Gujarat,Bhuj,Accord Hospital,Dr.Navubha Sodha,,,9825384958,,,https://nhm.gujarat.gov.in/Portal/News/221_1_PVT-HOSPITAL-COVID-19-ISOLATON-BEDS.pdf,Govt Of Gujarat,Private Hospitals with isolation beds
+3,Hospitals,Uttarakhand,Tehri Garhwal,District Hospital,,,,,,,http://health.uk.gov.in/files/New_Doc_2020-03-31_16.55.08.pdf,Govt of Uttrakhand,Dedicated Coronavirus Hospitals
+4,Hospitals,Uttarakhand,Udham Singh Nagar,District Hospital,,,,,,,http://health.uk.gov.in/files/New_Doc_2020-03-31_16.55.08.pdf,Govt of Uttrakhand,Dedicated Coronavirus Hospitals
+5,Hospitals,Uttarakhand,Uttarkashi,District Hospital,,,,,,,http://health.uk.gov.in/files/New_Doc_2020-03-31_16.55.08.pdf,Govt of Uttrakhand,Dedicated Coronavirus Hospitals

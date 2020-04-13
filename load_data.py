@@ -1,42 +1,49 @@
 from app import create_app
-from app.data.models import InfoType, Location, Entry
-import csv
+from app.data.models import State, City, Doctors
 from collections import defaultdict
+import csv
+import os
 
 app = create_app()
 
-with app.app_context():
-    with open('DATA_NEW_2.csv') as f:
+def load_doctors():
+
+    with open(os.path.join('initial_data', 'Doctors.csv')) as f:
         reader = csv.reader(f)
         l = tuple(reader)
 
-        print("adding new data..")
-        source_links = defaultdict(bool)
+        print("adding new doctors..")
 
         for s in l[1:]:
-            st = s[0].replace('&', 'and').strip()
+            st = s[2].strip()
             
-            loc, created = Location.get_or_save(state=st, city=s[1].strip())
-            i, created = InfoType.get_or_save(name=s[2])
+            state, created = State.get_or_save(state=st)
+            city, created = City.get_or_save(city=s[3], state=state)
 
-            # Check if Entry has a valid source link
-            if s[10] in source_links:
-                source_link_valid = source_links[s[10]]
-            else:
-                source_link_valid = False
-                try:
-                    req = requests.get(s[10], verify=False, timeout=5)
-                    if req.status_code == 200:
-                        source_link_valid = True
-                    else:
-                        print(f"{s[10]} is not 200\n")
-                except:
-                    print(f"{s[10]} can't reach\n")
-                    pass
+            # source_link = s[9]
+            # if source_link in source_links:
+            #     source_link_valid = source_links[source_link]
+            # else:
+            #     source_link_valid = False
+                # try:
+                #     req = requests.get(source_link, verify=False, timeout=5)
+                #     if req.status_code == 200:
+                #         source_link_valid = True
+                #     else:
+                #         print(f"{source_link} is not 200\n")
+                # except:
+                #     print(f"{source_link} can't reach\n")
+                #     pass
             
-                source_links[s[10]] = source_link_valid
+                # source_links[source_link] = source_link_valid
 
-            e = Entry(location_id=loc.id, infotype_id=i.id, name=s[3].strip(), occupation=s[4], email_id_1=s[5], email_id_2=s[6], phone_1=s[7], phone_2=s[8], extension=s[9], source_link=s[10], source_link_valid=source_link_valid, source=s[11])
-            e.save()
+            doc = Doctors(state_id=state.id, city_id=city.id, name=s[4], sub_category=s[5],\
+                email_id_1=s[6], phone_1=s[7], phone_2=s[8], source_url=s[9], source=s[10],\
+                description=s[11])
+                
+            doc.save()
 
-        print("Added new data!")
+        print("Added new doctors!")
+
+with app.app_context():
+    load_doctors()
