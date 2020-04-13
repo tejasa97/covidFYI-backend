@@ -15,20 +15,16 @@ class CategoryList(db.Model):
     active      = db.Column(db.Boolean, nullable=False, default=True)
  
     def __str__(self):
-
         return f'{self.category}'
 
 class State(db.Model):
     __tablename__ = 'state'
-
     id          = db.Column(db.Integer, primary_key=True)
     name        = db.Column(db.String(128), nullable=False)
     cities      = db.relationship('City', backref='state', lazy='dynamic')
 
     @classmethod
     def get_or_save(self, state):
-
-        # import pdb; pdb.set_trace()
         entry = self.query.filter_by(name=state).first()
         if entry is not None:
             return entry, False
@@ -132,6 +128,10 @@ class Hospitals(db.Model):
 
         return f'{self.name}'
 
+    def save(self):
+
+        db.session.add(self)
+        db.session.commit()
 
 class Laboratories(db.Model):
     __tablename__ = 'laboratories'
@@ -159,6 +159,98 @@ class Laboratories(db.Model):
 
         return f'{self.name}'
 
+    def save(self):
+
+        db.session.add(self)
+        db.session.commit()
+
+
+class Helplines(db.Model):
+    __tablename__ = 'helplines'
+    
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    state_id = db.Column(db.Integer, db.ForeignKey('state.id'), nullable=False)
+    city_id = db.Column(db.Integer, db.ForeignKey('city.id'), nullable=False)
+    sub_category = db.Column(db.String(128), nullable=True)
+
+    phone_1 = db.Column(db.String(128), nullable=True, default='')
+    phone_2 = db.Column(db.String(128), nullable=True, default='')
+
+    source_url = db.Column(db.String(512), nullable=True, default='')
+    source = db.Column(db.String(64), nullable=True, default='')
+    description = db.Column(db.String(256), nullable=True, default='')
+
+    def __str__(self):
+
+        return f'{self.sub_category}'
+
+    def save(self):
+
+        db.session.add(self)
+        db.session.commit()
+
+
+class Government(db.Model):
+    __tablename__ = 'government'
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    state_id = db.Column(db.Integer, db.ForeignKey('state.id'), nullable=False)
+    city_id = db.Column(db.Integer, db.ForeignKey('city.id'), nullable=False)
+
+    point_of_contact = db.Column(db.String(128), nullable=True)
+    sub_category = db.Column(db.String(64), nullable=True)
+
+    email_id_1 = db.Column(db.String(128), nullable=True, default='')
+    email_id_2 = db.Column(db.String(128), nullable=True, default='')
+    phone_1 = db.Column(db.String(128), nullable=True, default='')
+    phone_2 = db.Column(db.String(128), nullable=True, default='')
+
+    source_url = db.Column(db.String(512), nullable=True, default='')
+    source = db.Column(db.String(64), nullable=True, default='')
+    description = db.Column(db.String(256), nullable=True, default='')
+
+    def save(self):
+
+        db.session.add(self)
+        db.session.commit()
+
+    def __str__(self):
+
+        return f'{self.point_of_contact}' 
+
+#id,category,state,area,subCategory,name,pointOfContact,email1,email2,phone1,phone2,address,sourceUrl,source,description
+class Fever_Clinics(db.Model):
+    __tablename__ = 'fever_clinics'
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    state_id = db.Column(db.Integer, db.ForeignKey('state.id'), nullable=False)
+    city_id = db.Column(db.Integer, db.ForeignKey('city.id'), nullable=False)
+
+    point_of_contact = db.Column(db.String(128), nullable=True)
+    name = db.Column(db.String(128), nullable=True)
+    sub_category = db.Column(db.String(64), nullable=True)
+
+    email_id_1 = db.Column(db.String(128), nullable=True, default='')
+    email_id_2 = db.Column(db.String(128), nullable=True, default='')
+    phone_1 = db.Column(db.String(128), nullable=True, default='')
+    phone_2 = db.Column(db.String(128), nullable=True, default='')
+    address = db.Column(db.String(256), nullable=True, default='')
+    source_url = db.Column(db.String(512), nullable=True, default='')
+    source = db.Column(db.String(64), nullable=True, default='')
+    description = db.Column(db.String(256), nullable=True, default='')
+
+    def save(self):
+
+        db.session.add(self)
+        db.session.commit()
+
+    def __str__(self):
+
+        return f'{self.point_of_contact}'
 
 # class Category(db.Model):
 #     __tablename__ = 'category'
