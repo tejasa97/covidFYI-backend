@@ -1,15 +1,16 @@
-# from app.data import data_bp
-# from app.data.models import InfoType, Entry, Location
-# from itertools import chain
-# from flask import jsonify, request, make_response, abort, Response
-# import json
+from app.data import data_bp
 
-# @data_bp.route('/')
-# def ping():
+from itertools import chain
+from flask import jsonify, request, make_response, abort, Response
+import json
 
-#     return json.dumps({
-#         "hello" : "world"
-#     })
+""" @data_bp.route('/')
+def ping():
+    return json.dumps({
+        "hello" : "world"
+    }) """
+
+
 
 # @data_bp.route('/states/')
 # def list_states():
